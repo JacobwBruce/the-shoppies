@@ -3,18 +3,22 @@ import axios from 'axios';
 import './Search.css';
 import MovieInterface from '../interfaces/MovieInterface';
 import MovieResults from './MovieResults';
+import Loader from './Loader';
 
 const Search: FC = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [movieSearchResults, setMovieSearchResults] = useState<Array<MovieInterface>>([]);
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setLoading(true);
         const { data } = await axios.get(
             `http://www.omdbapi.com/?s=${searchQuery}&type=movie&apikey=${process.env.REACT_APP_API_KEY}`
         );
 
         setMovieSearchResults(data.Search);
+        setLoading(false);
     };
 
     return (
@@ -30,7 +34,7 @@ const Search: FC = () => {
                     <button type='submit' className='btn-search fas fa-search'></button>
                 </form>
             </div>
-            <MovieResults movies={movieSearchResults} />
+            {loading ? <Loader /> : <MovieResults movies={movieSearchResults} />}
         </>
     );
 };
