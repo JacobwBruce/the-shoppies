@@ -15,7 +15,7 @@ const MovieResults: FC<Props> = ({ movies }) => {
                     <MovieCard
                         key={movie.imdbID}
                         Title={movie.Title}
-                        id={movie.imdbID}
+                        imdbID={movie.imdbID}
                         Poster={movie.Poster}
                         Year={movie.Year}
                     />
