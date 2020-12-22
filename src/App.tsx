@@ -28,6 +28,9 @@ function App() {
 
     return (
         <MyContext.Provider value={{ movies, addMovie, removeMovie }}>
+            <div>
+                <h1 className='App-title'>The Shoppies</h1>
+            </div>
             <Search />
         </MyContext.Provider>
     );
