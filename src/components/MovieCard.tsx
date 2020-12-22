@@ -12,10 +12,18 @@ interface Props {
 
 const MovieCard: FC<Props> = ({ Title, Poster, Year, imdbID }) => {
     //@ts-ignore
-    const { addMovie, movies } = useContext(MyContext);
+    const { addMovie, removeMovie, movies } = useContext(MyContext);
 
     const movieNominated =
         movies.filter((movie: MovieInterface) => movie.imdbID === imdbID).length > 0;
+
+    const handleClick = () => {
+        if (!movieNominated) {
+            addMovie({ Title, Poster, Year, imdbID });
+        } else {
+            removeMovie(imdbID);
+        }
+    };
 
     return (
         <div className='MovieCard'>
@@ -26,9 +34,8 @@ const MovieCard: FC<Props> = ({ Title, Poster, Year, imdbID }) => {
                 </h3>
             </div>
             <button
-                className='MovieCard-button'
-                onClick={() => addMovie({ Title, Poster, Year, imdbID })}
-                disabled={movieNominated}
+                className={movieNominated ? 'MovieCard-button disabled' : 'MovieCard-button'}
+                onClick={handleClick}
             >
                 {movieNominated ? 'Nominated' : 'Nominate'}
             </button>

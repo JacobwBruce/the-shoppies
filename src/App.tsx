@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-import MovieCard from './components/MovieCard';
 import Search from './components/Search';
 import MovieInterface from './interfaces/MovieInterface';
 
@@ -8,14 +7,22 @@ import MovieInterface from './interfaces/MovieInterface';
 export const MyContext = React.createContext();
 
 function App() {
-    const [movies, setMovies] = useState<Array<MovieInterface>>([]);
+    const [movies, setMovies] = useState<Array<MovieInterface>>(
+        //@ts-ignore
+        JSON.parse(localStorage.getItem('movies')) || []
+    );
 
     const addMovie = (movie: MovieInterface) => {
-        const newMovies = [...movies];
+        if (movies.length === 5) {
+            alert('Cannot add movie');
+        } else {
+            const newMovies = [...movies];
 
-        newMovies.push(movie);
+            newMovies.push(movie);
 
-        setMovies(newMovies);
+            setMovies(newMovies);
+            localStorage.setItem('movies', JSON.stringify(newMovies));
+        }
     };
 
     const removeMovie = (id: string) => {
@@ -24,6 +31,7 @@ function App() {
         newMovies = newMovies.filter((movie) => movie.imdbID !== id);
 
         setMovies(newMovies);
+        localStorage.setItem('movies', JSON.stringify(newMovies));
     };
 
     return (
