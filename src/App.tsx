@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import Search from './components/Search';
 import MovieInterface from './interfaces/MovieInterface';
 
 //@ts-ignore
@@ -29,6 +30,7 @@ function App() {
             <div className='App'>
                 <h1>The Shoppies</h1>
             </div>
+            <Search />
         </MyContext.Provider>
     );
 }

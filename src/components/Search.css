@@ -1,0 +1,33 @@
+.search-container {
+    text-align: center;
+}
+.btn-search {
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    right: 35px;
+    background-color: hotpink;
+    color: white;
+    filter: grayscale(1);
+    transition: 0.3s ease-in-out;
+    outline: none;
+}
+.search {
+    border: 1px solid var(--text-color);
+    padding: 10px;
+    border-radius: 20px;
+    outline: none;
+    width: 200px;
+    transition: 0.3s ease-in-out;
+}
+
+.search:focus {
+    width: 400px;
+}
+
+.search:focus + .btn-search {
+    filter: grayscale(0);
+}
