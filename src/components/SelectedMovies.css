@@ -1,0 +1,51 @@
+.SelectedMovies {
+    width: 80px;
+    background-color: var(--primary-color);
+    height: 100vh;
+    position: fixed;
+    transition: 300ms ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+}
+
+.SelectedMovies-movie {
+    margin: 10px 0;
+    position: relative;
+}
+
+.SelectedMovies-movie img {
+    width: 60px;
+    transition: 300ms ease;
+    margin: 10px 0;
+}
+
+.fa-times-circle {
+    position: absolute;
+    top: 2px;
+    right: -5px;
+    color: white;
+    background-color: black;
+    border-radius: 100%;
+    transition: 300ms ease;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.SelectedMovies-movie:first-child {
+    margin-top: 30px;
+}
+
+.SelectedMovies:hover {
+    width: 250px;
+}
+
+.SelectedMovies:hover .SelectedMovies-movie img {
+    width: 140px;
+}
+
+.SelectedMovies:hover .fa-times-circle {
+    font-size: 20px;
+    opacity: 100;
+}

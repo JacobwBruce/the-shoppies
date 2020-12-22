@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Banner from './components/Banner';
 import Search from './components/Search';
+import SelectedMovies from './components/SelectedMovies';
 import MovieInterface from './interfaces/MovieInterface';
 
 //@ts-ignore
@@ -48,21 +49,24 @@ function App() {
 
     return (
         <MyContext.Provider value={{ movies, addMovie, removeMovie, closeBanner }}>
+            {movies.length !== 0 && <SelectedMovies />}
             {showBanner && <Banner />}
-            <div className='heading'>
-                <h1 className='App-title'>The Shoppies</h1>
-                <p>
-                    Code on github 👉
-                    <a
-                        href='https://github.com/JacobwBruce/the-shoppies'
-                        target='_blank'
-                        rel='noreferrer'
-                    >
-                        <i className='fab fa-github'></i>
-                    </a>
-                </p>
+            <div className={movies.length > 0 ? 'content' : ''}>
+                <div className='heading'>
+                    <h1 className='App-title'>The Shoppies</h1>
+                    <p>
+                        Code on github 👉
+                        <a
+                            href='https://github.com/JacobwBruce/the-shoppies'
+                            target='_blank'
+                            rel='noreferrer'
+                        >
+                            <i className='fab fa-github'></i>
+                        </a>
+                    </p>
+                </div>
+                <Search />
             </div>
-            <Search />
         </MyContext.Provider>
     );
 }
