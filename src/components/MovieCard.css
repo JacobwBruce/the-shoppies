@@ -1,0 +1,23 @@
+.MovieCard {
+    width: 210px;
+    text-align: center;
+}
+
+.MovieCard-image {
+    width: 210px;
+}
+
+.MovieCard-button {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 5px 20px;
+    font-size: 20px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.MovieCard-button:hover {
+    background-color: var(--primary-color-darker);
+}

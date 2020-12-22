@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import MovieInterface from '../interfaces/MovieInterface';
+import MovieCard from './MovieCard';
 import './MovieResults.css';
 
 interface Props {
@@ -11,10 +12,13 @@ const MovieResults: FC<Props> = ({ movies }) => {
         <div>
             {movies &&
                 movies.map((movie) => (
-                    <div key={movie.imdbID}>
-                        <img src={movie.Poster} alt={movie.Title} />
-                        <h4>{movie.Title}</h4>
-                    </div>
+                    <MovieCard
+                        key={movie.imdbID}
+                        Title={movie.Title}
+                        id={movie.imdbID}
+                        Poster={movie.Poster}
+                        Year={movie.Year}
+                    />
                 ))}
         </div>
     );
