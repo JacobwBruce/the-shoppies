@@ -1,12 +1,19 @@
 import React, { FC, useState } from 'react';
+import axios from 'axios';
 import './Search.css';
+import MovieInterface from '../interfaces/MovieInterface';
 
 const Search: FC = () => {
     const [searchQuery, setSearchQuery] = useState('');
+    const [movieSearchResults, setMovieSearchResults] = useState<Array<MovieInterface>>([]);
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(searchQuery);
+        const { data } = await axios.get(
+            `http://www.omdbapi.com/?s=${searchQuery}&type=movie&apikey=${process.env.REACT_APP_API_KEY}`
+        );
+
+        setMovieSearchResults(data.Search);
     };
 
     return (
