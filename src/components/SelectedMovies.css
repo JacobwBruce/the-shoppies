@@ -8,6 +8,7 @@
     flex-direction: column;
     align-items: center;
     overflow: scroll;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .SelectedMovies-movie {
@@ -19,6 +20,7 @@
     width: 60px;
     transition: 300ms ease;
     margin: 10px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .fa-times-circle {
