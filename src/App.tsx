@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import Banner from './components/Banner';
 import Search from './components/Search';
 import MovieInterface from './interfaces/MovieInterface';
 
@@ -12,6 +13,8 @@ function App() {
         JSON.parse(localStorage.getItem('movies')) || []
     );
 
+    const [showBanner, setShowBanner] = useState(true);
+
     const addMovie = (movie: MovieInterface) => {
         if (movies.length === 5) {
             alert('Cannot add movie');
@@ -22,6 +25,10 @@ function App() {
 
             setMovies(newMovies);
             localStorage.setItem('movies', JSON.stringify(newMovies));
+
+            if (newMovies.length === 5) {
+                setShowBanner(true);
+            }
         }
     };
 
@@ -36,6 +43,7 @@ function App() {
 
     return (
         <MyContext.Provider value={{ movies, addMovie, removeMovie }}>
+            {showBanner && <Banner />}
             <div className='heading'>
                 <h1 className='App-title'>The Shoppies</h1>
                 <p>

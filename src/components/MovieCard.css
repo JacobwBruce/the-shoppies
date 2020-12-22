@@ -18,7 +18,7 @@
 
 .MovieCard-button {
     background-color: var(--primary-color);
-    border: none;
+    border: 2px solid var(--primary-color);
     padding: 5px 20px;
     font-size: 20px;
     color: white;
@@ -30,10 +30,11 @@
 
 .MovieCard-button:hover {
     background-color: var(--primary-color-darker);
+    border-color: var(--primary-color-darker);
+    color: white;
 }
 
 .disabled {
     background-color: white;
     color: var(--primary-color);
-    border: 3px solid var(--primary-color);
 }

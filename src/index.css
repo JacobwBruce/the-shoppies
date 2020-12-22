@@ -1,7 +1,10 @@
 :root {
     --text-color: #969696;
-    --primary-color: #00da97;
-    --primary-color-darker: #069e71;
+
+    /* --primary-color: #00da97; */
+    /* --primary-color-darker: #069e71; */
+    --primary-color: #008060;
+    --primary-color-darker: rgb(3, 85, 60);
 }
 
 body {
