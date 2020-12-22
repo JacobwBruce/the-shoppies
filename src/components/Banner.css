@@ -2,4 +2,13 @@
     text-align: center;
     background-color: var(--primary-color);
     color: white;
+    padding: 5px;
+}
+
+.Banner-link {
+    color: white;
+}
+
+.Banner-times {
+    cursor: pointer;
 }

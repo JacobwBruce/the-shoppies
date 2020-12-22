@@ -13,7 +13,7 @@ function App() {
         JSON.parse(localStorage.getItem('movies')) || []
     );
 
-    const [showBanner, setShowBanner] = useState(true);
+    const [showBanner, setShowBanner] = useState(movies.length === 5);
 
     const addMovie = (movie: MovieInterface) => {
         if (movies.length === 5) {
@@ -39,10 +39,15 @@ function App() {
 
         setMovies(newMovies);
         localStorage.setItem('movies', JSON.stringify(newMovies));
+        setShowBanner(false);
+    };
+
+    const closeBanner = () => {
+        setShowBanner(false);
     };
 
     return (
-        <MyContext.Provider value={{ movies, addMovie, removeMovie }}>
+        <MyContext.Provider value={{ movies, addMovie, removeMovie, closeBanner }}>
             {showBanner && <Banner />}
             <div className='heading'>
                 <h1 className='App-title'>The Shoppies</h1>
