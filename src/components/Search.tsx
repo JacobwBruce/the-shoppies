@@ -14,7 +14,7 @@ const Search: FC = () => {
         e.preventDefault();
         setLoading(true);
         const { data } = await axios.get(
-            `http://www.omdbapi.com/?s=${searchQuery}&type=movie&apikey=${process.env.REACT_APP_API_KEY}`
+            `https://www.omdbapi.com/?s=${searchQuery}&type=movie&apikey=${process.env.REACT_APP_API_KEY}`
         );
 
         setMovieSearchResults(data.Search);
