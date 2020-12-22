@@ -28,6 +28,7 @@ const Search: FC = () => {
                     <input
                         type='text'
                         className='search'
+                        placeholder='Search movies...'
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />

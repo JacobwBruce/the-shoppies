@@ -10,7 +10,7 @@
     cursor: pointer;
     position: relative;
     right: 35px;
-    background-color: hotpink;
+    background-color: var(--primary-color);
     color: white;
     filter: grayscale(1);
     transition: 0.3s ease-in-out;

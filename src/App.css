@@ -1,3 +1,16 @@
-.App-title {
-    text-align: center;
+.heading {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-content: center;
+}
+
+.heading a {
+    margin-left: 10px;
+    font-size: 2em;
+    color: black;
+}
+
+.heading p {
+    font-size: 1.2em;
 }

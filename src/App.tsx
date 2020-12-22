@@ -36,8 +36,18 @@ function App() {
 
     return (
         <MyContext.Provider value={{ movies, addMovie, removeMovie }}>
-            <div>
+            <div className='heading'>
                 <h1 className='App-title'>The Shoppies</h1>
+                <p>
+                    Code on github 👉
+                    <a
+                        href='https://github.com/JacobwBruce/the-shoppies'
+                        target='_blank'
+                        rel='noreferrer'
+                    >
+                        <i className='fab fa-github'></i>
+                    </a>
+                </p>
             </div>
             <Search />
         </MyContext.Provider>
