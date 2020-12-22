@@ -11,10 +11,12 @@ interface Props {
 const MovieCard: FC<Props> = ({ Title, Poster, Year, id }) => {
     return (
         <div className='MovieCard'>
-            <img src={Poster} alt={Title} className='MovieCard-image' />
-            <h3 className='MovieCard-title'>
-                {Year} | {Title}
-            </h3>
+            <div>
+                <img src={Poster} alt={Title} className='MovieCard-image' />
+                <h3 className='MovieCard-title'>
+                    {Year} | {Title}
+                </h3>
+            </div>
             <button className='MovieCard-button'>Nominate</button>
         </div>
     );

@@ -9,7 +9,7 @@ interface Props {
 
 const MovieResults: FC<Props> = ({ movies }) => {
     return (
-        <div>
+        <div className='MovieResults'>
             {movies &&
                 movies.map((movie) => (
                     <MovieCard

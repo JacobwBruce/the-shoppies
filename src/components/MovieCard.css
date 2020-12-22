@@ -1,10 +1,19 @@
 .MovieCard {
     width: 210px;
     text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgb(226, 224, 224);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .MovieCard-image {
     width: 210px;
+    height: 324.09px;
 }
 
 .MovieCard-button {

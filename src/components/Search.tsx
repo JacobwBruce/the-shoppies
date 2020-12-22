@@ -19,7 +19,7 @@ const Search: FC = () => {
 
     return (
         <>
-            <div className='search-container'>
+            <div className='Search'>
                 <form onSubmit={handleSubmit}>
                     <input
                         type='text'
