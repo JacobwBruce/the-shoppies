@@ -32,3 +32,12 @@
 .search:focus + .btn-search {
     filter: grayscale(0);
 }
+
+@media (max-width: 600px) {
+    .search {
+        width: 200px;
+    }
+    .search:focus {
+        width: 240px;
+    }
+}
