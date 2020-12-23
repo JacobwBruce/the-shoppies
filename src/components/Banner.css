@@ -3,6 +3,8 @@
     background-color: var(--primary-color);
     color: white;
     padding: 5px;
+    position: fixed;
+    width: 100%;
 }
 
 .Banner-link {
