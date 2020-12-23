@@ -1,7 +1,7 @@
 import React, { FC, useContext } from 'react';
 import { MyContext } from '../App';
 import MovieInterface from '../interfaces/MovieInterface';
-import './SelectedMovies.css';
+import './css/SelectedMovies.css';
 
 const SelectedMovies: FC = () => {
     //@ts-ignore

@@ -1,7 +1,7 @@
 import React, { FC, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { MyContext } from '../App';
-import './Banner.css';
+import './css/Banner.css';
 
 const Banner: FC = () => {
     //@ts-ignore

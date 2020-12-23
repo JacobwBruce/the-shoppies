@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import axios from 'axios';
-import './Search.css';
+import './css/Search.css';
 import MovieInterface from '../interfaces/MovieInterface';
 import MovieResults from './MovieResults';
 import Loader from './Loader';

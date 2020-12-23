@@ -1,7 +1,7 @@
 import React, { FC, useContext } from 'react';
 import { MyContext } from '../App';
 import MovieInterface from '../interfaces/MovieInterface';
-import './MovieCard.css';
+import './css/MovieCard.css';
 
 interface Props {
     Title: string;
