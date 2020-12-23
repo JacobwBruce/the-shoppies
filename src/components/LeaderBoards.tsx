@@ -27,15 +27,20 @@ const LeaderBoards: FC = () => {
 
     return (
         <div>
-            <h1>LeaderBoards</h1>
-            <Link to='/'>Go Back</Link>
+            <div className='Leaderboards-heading'>
+                <h1 className='Leaderboards-title'>LeaderBoards</h1>
+                <Link to='/' className='Leaderboards-link'>
+                    Go Back
+                </Link>
+            </div>
+            <h1 className='Leaderboards-subtitle'>Current movies with the most votes</h1>
             <div className='Leaderboards-container'>
                 {topMovies.map((movie: MovieInterface) => (
                     <div className='MovieCard' key={movie.imdbID}>
                         <div>
                             <img src={movie.Poster} alt={movie.Title} className='MovieCard-image' />
                             <h3 className='MovieCard-title'>
-                                {movie.Year} | {movie.Title}
+                                ({movie.Year}) {movie.Title}
                             </h3>
                         </div>
                         <h1>{movie.votes} Votes</h1>

@@ -30,7 +30,7 @@ const MovieCard: FC<Props> = ({ Title, Poster, Year, imdbID }) => {
             <div>
                 <img src={Poster} alt={Title} className='MovieCard-image' />
                 <h3 className='MovieCard-title'>
-                    {Year} | {Title}
+                    ({Year}) {Title}
                 </h3>
             </div>
             <button

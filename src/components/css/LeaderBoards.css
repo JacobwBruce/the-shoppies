@@ -1,0 +1,26 @@
+.Leaderboards-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.Leaderboards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.Leaderboards-title {
+    color: white;
+}
+
+.Leaderboards-link {
+    color: white;
+}
+
+.Leaderboards-subtitle {
+    text-align: center;
+}
