@@ -3,6 +3,7 @@ export default interface MovieInterface {
     Title: string;
     Year: string;
     imdbID: string;
+    votes?: number;
 }
 
 // export default interface Movie {
