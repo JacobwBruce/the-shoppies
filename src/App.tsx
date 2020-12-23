@@ -3,7 +3,9 @@ import './App.css';
 import Banner from './components/Banner';
 import Search from './components/Search';
 import SelectedMovies from './components/SelectedMovies';
+import { projectFirestore } from './firebase/firebase';
 import MovieInterface from './interfaces/MovieInterface';
+import firebase from 'firebase/app';
 
 //@ts-ignore
 export const MyContext = React.createContext();
@@ -16,7 +18,7 @@ function App() {
 
     const [showBanner, setShowBanner] = useState(movies.length === 5);
 
-    const addMovie = (movie: MovieInterface) => {
+    const addMovie = async (movie: MovieInterface) => {
         if (movies.length === 5) {
             alert('Cannot add movie');
         } else {
@@ -27,19 +29,36 @@ function App() {
             setMovies(newMovies);
             localStorage.setItem('movies', JSON.stringify(newMovies));
 
+            const movieRef = projectFirestore.collection('movies').doc(movie.imdbID);
+            const data = await movieRef.get();
+            if (!data.exists) {
+                //add document to firestore
+                movieRef.set({ ...movie, votes: 1 });
+            } else {
+                //update vots on document
+                await movieRef.update({
+                    votes: firebase.firestore.FieldValue.increment(1),
+                });
+            }
+
             if (newMovies.length === 5) {
                 setShowBanner(true);
             }
         }
     };
 
-    const removeMovie = (id: string) => {
+    const removeMovie = async (id: string) => {
         let newMovies = [...movies];
 
         newMovies = newMovies.filter((movie) => movie.imdbID !== id);
 
         setMovies(newMovies);
         localStorage.setItem('movies', JSON.stringify(newMovies));
+
+        const movieRef = projectFirestore.collection('movies').doc(id);
+        await movieRef.update({
+            votes: firebase.firestore.FieldValue.increment(-1),
+        });
         setShowBanner(false);
     };
 
