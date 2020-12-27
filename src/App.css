@@ -26,4 +26,12 @@
         flex-direction: column;
         padding-top: 35px;
     }
+
+    .heading p {
+        display: none;
+    }
+
+    .App-title {
+        margin-bottom: 0;
+    }
 }

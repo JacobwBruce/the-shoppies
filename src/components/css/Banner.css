@@ -14,3 +14,10 @@
 .Banner-times {
     cursor: pointer;
 }
+
+@media (max-width: 600px) {
+    .Banner-message {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
