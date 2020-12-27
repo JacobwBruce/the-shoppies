@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { projectFirestore } from '../firebase/firebase';
+import { projectFirestore } from '../firebase/config';
 import MovieInterface from '../interfaces/MovieInterface';
 import './css/MovieCard.css';
 import './css/LeaderBoards.css';

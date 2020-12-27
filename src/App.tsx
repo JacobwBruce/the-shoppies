@@ -3,7 +3,7 @@ import './App.css';
 import Banner from './components/Banner';
 import Search from './components/Search';
 import SelectedMovies from './components/SelectedMovies';
-import { projectFirestore } from './firebase/firebase';
+import { projectFirestore } from './firebase/config';
 import MovieInterface from './interfaces/MovieInterface';
 import firebase from 'firebase/app';
 
