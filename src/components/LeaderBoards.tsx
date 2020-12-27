@@ -28,10 +28,12 @@ const LeaderBoards: FC = () => {
     return (
         <div>
             <div className='Leaderboards-heading'>
-                <h1 className='Leaderboards-title'>LeaderBoards</h1>
-                <Link to='/' className='Leaderboards-link'>
-                    Go Back
-                </Link>
+                <div className='Leaderboards-heading-text'>
+                    <h1 className='Leaderboards-title'>LeaderBoards</h1>
+                    <Link to='/' className='Leaderboards-link'>
+                        Go Back
+                    </Link>
+                </div>
             </div>
             <h1 className='Leaderboards-subtitle'>Current movies with the most votes</h1>
             <div className='Leaderboards-container'>
